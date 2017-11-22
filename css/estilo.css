@@ -1,5 +1,7 @@
-.tituloazul{
-  color: #0000ff !important;
-  font-size: 30pt;
+.tituloAzul{
+  color: #0404B4 !important;
+  text-decoration:line-through;
+  font-size: 40pt;
   text-align: right !important;
+
 }
