@@ -3,5 +3,28 @@
   text-decoration:line-through;
   font-size: 40pt;
   text-align: right !important;
-
+}
+footer{
+	background-color: #161313;
+	color: white;
+	text-align: center;
+}
+.col-3{
+	text-align: center;
+  padding-top: 20px;
+  font-family: fantasy;
+  font-size: 20px;
+}
+ul{
+	display: inline-block;
+}
+li{
+	display: inline;
+}
+{
+  padding-top: 100px;
+}
+.footerfinal{
+  font-family: fantasy;
+  color: #007bff;
 }
