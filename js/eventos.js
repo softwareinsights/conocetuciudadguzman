@@ -1,4 +1,3 @@
-
 $(document).ready( function() {
     
     $.ajax({
@@ -7,14 +6,11 @@ $(document).ready( function() {
         crossDomain: true,
         dataType: "json",
         success: function (data, status) {
-
-            if (status=="success") {
+           if (status=="success") {
                 $.each(data,pintarCard);
                 function pintarCard(index){
-
-                    var evento = data[index];
-        
-                    var html =  '<div class="row">' +
+                   var evento = data[index];
+                   var html =  '<div class="row">' +
                                     '<div class="col-12">' +
                                         '<article>' +
                                             '<div class="card" style="width: 20rem;">' +
@@ -27,20 +23,15 @@ $(document).ready( function() {
                                         '</div>' +
                                         '</article>' +
                                     '</div>' +
-                                '</div>';  
-                        
-                    var contenedor = $("#contenedor");
-        
-                    contenedor.append(html);
-        
-                }
+                                '</div>'+
+                                '<br>';
+                   var contenedor = $("#contenedor");
+                   contenedor.append(html);
+               }
             }
         },
         error: function (xhr, status) {
             alert("error");
         }
     });
-
-
-
-}); 
+});
