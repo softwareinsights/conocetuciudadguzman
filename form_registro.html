@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="container text-center">
+    <div class="container">
       <header>
       <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -72,62 +72,77 @@
         </div>
       </section>
       <div class="row">
-        <div class="col-8">
+        <div class="col-md-6 offset-3">
           <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 " >
               <div class="titulo">
                 <h1>Registro</h1>
               </div>
               <div class="formularioR">
                 <form role="form" action="" method="" class="">
                   <div class="form-gruop">
-                    <input type="text" name="form-name" placeholder="Nombre" class="form-control" id="form-name" required><br>
+                    <label class="form-label" for="nombre"><strong>Nombre: </label>
+                    <input type="text" name="realm" placeholder="Nombre" class="form-control" id="realm" required><br>
                   </div>
                   <div class="form-gruop">
-                    <input type="email" name="form-email" placeholder="Email" class="form-control" id="form-email" required> <br>
+                    <label class="form-label" for="email"><strong>Email:</label>
+                    <input type="email" name="email" placeholder="Email" class="form-control" id="email" required> <br>
                   </div>
                   <div class="form-gruop">
-                    <input type="password" name="form-contraseña" placeholder="Contraseña" class="form-control" id="form-contraseña1" required> <br>
+                    <label class="form-label" for="password"><strong>Password: </label>
+                    <input type="password" name="password" placeholder="Password" class="form-control" id="password" required> <br>
                   </div>
                   <div class="form-gruop">
-                    <input type="password" name="form-contraseña" placeholder="Repite la contraseña" class="form-control" id="form-contraseña2" required> <br>
+                    <label class="form-label" for="repassword"><strong>Repite tú password: </label>
+                    <input type="password" name="repassword" placeholder="Repite la contraseña" class="form-control" id="repassword" required> <br>
                   </div>
-                  <button type="submit" class="btn btn-outline-primary">Entrar</button>
+                  <div class="form-gruop">
+                    <label class="form-label" for="telefono"><strong>Teléfono: </label>
+                    <input type="phone" name="telefono" placeholder="Teléfono" class="form-control" id="telefono" required> <br>
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary" id="submit">Ok</button>
                 </form>
               </div>
             </div>
 
           </div>
         </div>
-        <div class="col-4">
-          <div class="row">
-            <div class="col-12 text-center">
-              <div class="titulo">
-                <h1>Accesa</h1>
-              </div>
-              <div class="formularioL">
-                <form role="form" action="" method="" class="">
-                  <div class="form-gruop">
-                    <input type="email" name="form-email-usuario" placeholder="Email" class="form-control" id="form-email" required> <br>
-                  </div>
-                  <div class="form-gruop">
-                    <input type="password" name="form-contraseña-usuario" placeholder="Contraseña" class="form-control" id="form-contraseña1" required> <a href="#">Recordar Contraseña</a><br>
 
-                  </div>
-                  <button type="submit" class="btn btn-outline-primary">Entrar</button>
-                </form>
-              </div>
-            </div>
-        </div>
-      </div>
-      <footer>
-  datos PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb <br>
-      </footer>
-  </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="js/funciones.js" charset="utf-8"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="js/funciones.js" charset="utf-8"></script>
+  <script src="js/registro.js"></script>
+  <script>
+  $(document).ready(function(){
+
+
+   $("#submit").click(enviar);
+
+
+    function enviar(e) {
+      e.preventDefault();
+
+      if($("#password").val() !== $("#repassword").val() ){
+        alert("No coinciden las contraseñas");
+        return  false;
+      }
+
+      var registro = {
+                      "realm": ''+ $("#realm").val() +'',
+                      "telefono": ''+ $("#telefono").val() +'',
+                      "email": ''+ $("#email").val() +'',
+                      "password": ''+ $("#password").val() +'',
+                      "tipo": "CIUDADANO"
+                    }
+                    console.log(registro);
+      enviarRegistro(registro);
+    }
+
+  });
+  </script>
+
+
 </body>
 </html>

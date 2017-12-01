@@ -80,12 +80,12 @@
               <div >
                 <form role="form" action="" method="" class="">
                   <div class="form-gruop"><br>
-                    <input type="email" name="form-email-usuario" placeholder="Email" class="form-control" id="form-email" required> <br>
+                    <input type="email" name="email" placeholder="Email" class="form-control" id="email" required> <br>
                   </div>
                   <div class="form-gruop">
-                    <input type="password" name="form-contraseña-usuario" placeholder="Contraseña" class="form-control" id="form-contraseña1" required> <a href="#">Recordar Contraseña</a><br>
+                    <input type="password" name="password" placeholder="Contraseña" class="form-control" id="password" required> <a href="#">Recordar Contraseña</a><br>
                   </div>
-                  <button type="submit" class="btn btn-outline-primary">Entrar</button>
+                  <button type="submit" class="btn btn-outline-primary" id="submit">Entrar</button>
                 </form>
               </div>
             </div>
@@ -97,9 +97,28 @@
         </footer>
   </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="js/funciones.js" charset="utf-8"></script>
+<script src="js/acceso.js" charset="utf-8"></script>
+<script>  $(document).ready(function(){
+   $("#submit").click(enviar);
+
+    function enviar(e) {
+      e.preventDefault();
+
+      var acceso = {
+                      "email": ''+ $("#email").val() +'',
+                      "password": ''+ $("#password").val() +'',
+                      "tipo": "CIUDADANO"
+                    }
+                    console.log(acceso);
+      enviarAcceso(acceso);
+    }
+
+  });
+
+</script>
 </body>
 </html>
