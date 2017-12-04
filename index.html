@@ -17,7 +17,7 @@
       <header>
     <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#" style="font-size:40px;" >Conoce tú Ciudad Guzmán</a>
+          <a class="navbar-brand" href="#" style="font-size:30px;" >Conoce tú Ciudad Guzmán</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,6 +31,7 @@
                   <a class="dropdown-item" href="#">Lugares mejor votados</a>
                   <a class="dropdown-item" href="#">Lugares mas visitados</a>
                   <a class="dropdown-item" href="#">Tus lugares favoritos</a>
+                  <a class="dropdown-item" href="registro_lugar.html">Registrar Lugar</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -181,8 +182,8 @@
 <script>
 $(document).ready( function() {
 
-  carga_card("eventos","tipo","Ciudad","evento_ciudad","GET");
-  carga_card("eventos","tipo","Comunidad","evento_comunidad","GET");
+  carga_card("eventos","tipo","CIUDAD","evento_ciudad","GET");
+  carga_card("eventos","tipo","COMUNIDAD","evento_comunidad","GET");
 
 
 });
