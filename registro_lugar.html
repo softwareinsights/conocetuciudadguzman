@@ -11,48 +11,58 @@
 <body>
     <div class="container">
         <header>
-                <!--NAVBAR-->
-                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#" style="font-size:30px;" >Conoce tú Ciudad Guzmán</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-          
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lugares</a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Lugares mejor votados</a>
-                            <a class="dropdown-item" href="#">Lugares mas visitados</a>
-                            <a class="dropdown-item" href="#">Tus lugares favoritos</a>
-                          </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eventos</a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Eventos de la Ciudad</a>
-                            <a class="dropdown-item" href="#">Eventos de la Comunidad</a>
-                            <a class="dropdown-item" href="#">Tus Eventos</a>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link " href="form_registro.html">Registrate</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link " href="form_login.html">Acceso</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link " href="form_login.html">Registrar Evento</a>
-                              </li>
-                      </ul>
-                      <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Escribe aquí" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">Buscar</button>
-                      </form>
-                    </div>
-                  </nav>
-                </header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                Conoce tu Ciudad
+                <b>
+                  <i>
+                    Guzmán
+                  </i>
+                </b>
+              
+              </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Lugares
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Lugares mejor votados</a>
+                  <a class="dropdown-item" href="#">Lugares mas visitados</a>
+                  <a class="dropdown-item" href="#">Tus lugares favoritos</a>
+                  
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Eventos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Eventos de la Ciudad</a>
+                  <a class="dropdown-item" href="#">Eventos de la Comunidad</a>
+                  <a class="dropdown-item" href="#">Tus Eventos</a>
+                  <a class="dropdown-item" href="registro_evento.html">Registrar Evento</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="form_registro.html">Registrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="form_login.html">Acceso</a>
+              </li>
+              
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Escribe aquí" aria-label="Search">
+              <button id="buscar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+      </header>
     <div>
         <div class="col-12">
             <div class="col-6 margensimple espacio text-center">
@@ -74,13 +84,8 @@
                         </label>
                         <input type="text" class="form-control" id="latitud" required>
                 </div>
-                <div class=form-group>
-                    <b>
-                                      Longitud
-                    </b>
-                     <label class="form-label" for="lng"></label>
-                     <input type="text" class="form-control" id="longitud" required>
-                </div>
+              </li>
+            
                 <div class=form-group>
                 <b>
                                           Descripción
@@ -96,6 +101,21 @@
 
                 </div>
 
+                    <div class='map-wrapper'>
+                        <p id="geo_label" for="reverseGeocode">¿Actualizar dirección al arrastrar el marcador?
+                        <select name="reverseGeocode" id="reverseGeocode">
+                            <option value="false" selected>No</option>
+                            <option value="true">Si</option>
+                        </select></p>
+                        <br/>
+                        <div id="map_canvas" style="width: 400px; height: 280px; margin: 0 auto;"></div>
+                        <div id="callback_result" class="hidden"></div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-outline-primary" id="submit">Ok</button>
+                </form>
+              </div>
             </div>
         </div>
     </div>
@@ -116,6 +136,38 @@
             "lng":''+$("#lng").val()+'',
             
           }
+          registrolugar(lugar);
+        }
+
+        /*
+          * Maps
+          */
+        var addresspickerMap = $('#direccion').addresspicker({
+            regionBias: "mx",
+            updateCallback: showCallback,
+            mapOptions: {
+                zoom: 16,
+                center: new google.maps.LatLng('20.7217961, -103.38968779999999'),
+                scrollwheel: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                streetViewControl: false
+            },
+            elements: {
+                map: "#map_canvas",
+                lat: "#lat",
+                lng: "#lng"
+            }
+        });
+
+        var gmarker = addresspickerMap.addresspicker("marker");
+        gmarker.setVisible(true);
+        addresspickerMap.addresspicker("updatePosition");
+        var map = addresspickerMap.addresspicker("map");
+        google.maps.event.trigger(map,"resize");
+
+        $('#reverseGeocode').change(function(){
+            $("#direccion").addresspicker("option", "reverseGeocode", ($(this).val() === 'true'));
+        });
 
         }
 
