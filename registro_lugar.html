@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/Stilo.css">
+    <title>Registro Lugar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <header>
+                <!--NAVBAR-->
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#" style="font-size:30px;" >Conoce tú Ciudad Guzmán</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+          
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lugares</a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Lugares mejor votados</a>
+                            <a class="dropdown-item" href="#">Lugares mas visitados</a>
+                            <a class="dropdown-item" href="#">Tus lugares favoritos</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eventos</a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Eventos de la Ciudad</a>
+                            <a class="dropdown-item" href="#">Eventos de la Comunidad</a>
+                            <a class="dropdown-item" href="#">Tus Eventos</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="form_registro.html">Registrate</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="form_login.html">Acceso</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link " href="form_login.html">Registrar Evento</a>
+                              </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Escribe aquí" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">Buscar</button>
+                      </form>
+                    </div>
+                  </nav>
+                </header>
+    <div>
+        <div class="col-12">
+            <div class="col-6 margensimple espacio text-center">
+                <h2>
+                    Registra un lugar
+                </h2>
+                <div class=form-group>
+                   <b>
+                        Nombre del Lugar
+                   </b>
+                    <label class="form-label" for="nombre"></label>      
+                    <input type="text" class="form-control" id="nombre_lugar" required>
+                </div>    
+                <div class=form-group>
+                    <b>
+                                 Latitud
+                    </b>
+                        <label class="form-label" for="lat">
+                        </label>
+                        <input type="text" class="form-control" id="latitud" required>
+                </div>
+                <div class=form-group>
+                    <b>
+                                      Longitud
+                    </b>
+                     <label class="form-label" for="lng"></label>
+                     <input type="text" class="form-control" id="longitud" required>
+                </div>
+                <div class=form-group>
+                <b>
+                                          Descripción
+                </b>
+                <label class="form-label" for="descripcion">
+                </label>
+                <input type="text" class="form-control" id="descripcion" required>
+                </div>
+                <div class="form-group">
+                        <button type="submit" id="submit" class="btn btn-outline-primary">Registrar</button>
+                </div>
+                <div id=map>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/funciones.js" charset="utf-8"></script>
+    <script src="js/registro_lugar.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#submit").click(registrarEvento);
+        function registrarEvento(e){
+          e.preventDefault();
+          var Lugar={
+            "nombre": ''+$("#nombre_lugar").val()+'',
+            "lat":''+$("#lat").val()+'',
+          }
+
+        }
+
+      })
+
+    </script>
+</body>
+</html>
