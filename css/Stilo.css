@@ -1,0 +1,50 @@
+.pollitostyle{
+    background-color: turquoise;
+    color: violet;
+    margin: 100px 100px 100px 350px;
+}
+.estilomenu{
+    background-color: white;
+    color: magenta;
+    border: 8px;
+    border-style: dashed ;
+    border-color:red;
+    
+    margin: 200px 100px 100px 420px;
+    
+}
+.menustyle{
+    background-color:white;
+    border: double black 8px;
+    margin: 200px 100px 100px 420px;
+    color: blue;
+   
+}
+.menu{
+    color:#CC2EFA;
+    font: size 30pts;
+    text-align: center;
+    border: 8px;
+    border-style: dotted;
+    border-color: #CC2EFA;
+    margin: 100px 0 100px 300px;
+
+}
+.menu2{
+  color: mediumaquamarine;
+  border: 8px;
+  border-style: dotted;
+  border-color: mediumaquamarine;
+  margin-top: 50px;
+  margin-left: 250px;
+  font: size 30pts;
+  text-align: center;
+}
+.espacio{
+    margin-top: 50px;
+    margin-left: 280px;
+}
+.margensimple{
+    border-style: solid;
+    border-color: #ccccb3;
+}
