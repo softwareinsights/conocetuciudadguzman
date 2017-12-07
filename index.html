@@ -75,6 +75,8 @@
           </div>
         </div>
       </section>
+
+      
       <!--GRID-->
       <div class="row">
         <div class="col-lg-8 col-sm-12">
@@ -84,29 +86,7 @@
                 <h1>Lugares</h1>
                 <h2 class="text-center text-danger">Mejor Votados</h2>
                 <div class="row">
-                  <div class="col-lg-6 col-sm-12">
-                    <article>
-                      <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="db4.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <h4 class="card-title">Goku</h4>
-                          <p class="card-text">Personaje que participo en la serie de Dragon Ball..</p>
-                          <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-lg-6 col-sm-12">
-                    <article>
-                      <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="db5.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h4 class="card-title">Vegeta</h4>
-                          <p class="card-text">Personaje que participo en la serie de Dragon Ball..</p>
-                          <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                      </div>
-                    </article>
+                  <div class="col-lg-6 col-sm-12" id="lugar_votados">                     
                   </div>
                 </div>
                 <h2 class="text-center text-danger">Mas Visitados</h2>
@@ -191,14 +171,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="js/funciones.js"></script>
 <script src="js/eventos.js"></script>
+<script src="js/lugares.js"></script>
 <script>
 $(document).ready( function() {
 
   carga_card("eventos","tipo","CIUDAD","evento_ciudad","GET");
   carga_card("eventos","tipo","COMUNIDAD","evento_comunidad","GET");
-
-
+  carga_lugar("lugares","descripcion","votados","lugar_votados","GET");
 });
 </script>
+
   </body>
 </html>
