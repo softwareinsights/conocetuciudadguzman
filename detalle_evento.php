@@ -1,3 +1,7 @@
+<?php
+echo $_GET['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -91,7 +95,7 @@
                 </div>           
             </div>
             <div class="row" >
-                    <div class="col-12">
+                    <div class="col-12" id="img">
                         <img class="img-fluid" src="db4.jpg" alt="foto">               
                     </div>           
              </div>           
@@ -101,15 +105,13 @@
         <div class="col-7"  STYLE="BORDER:DOUBLE 10PX LIME">
                 <div class="row" >
                     <div class="col-12">
-                        <h2>Nombre</h2>  
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nulla in, aspernatur ex sint sapiente dolor amet alias cumque autem?                     
-                    </div>           
+                        <h2 id="nombre"> Nombre</h2>  
+                        </div>           
                 </div>
 
                 <div class="row">
                         <div class="col-12">
-                            <h2>Descripcion</h2>    
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus incidunt velit dolor harum voluptate odit non cupiditate illum omnis laboriosam fuga quisquam consequuntur voluptatem fugit provident ratione molestias minus ex quidem cum, nostrum mollitia quos nam ipsam. Facere, perferendis! Quam magnam inventore iure labore porro molestiae culpa quibusdam ipsam cupiditate nemo debitis non cumque provident, aut autem exercitationem tenetur libero delectus! Exercitationem ratione illo aliquid maiores impedit, earum tempore eaque eum. Consequuntur ipsam sit porro itaque voluptates ad quos pariatur nemo veritatis delectus perferendis atque corrupti, tempore, modi eius vero. Quos modi possimus magnam odio voluptatibus alias, similique provident pariatur.                   
+                            <h2 id="descripcion">Descripcion</h2>    
                         </div>           
                 </div>           
         </div>
@@ -126,8 +128,8 @@
                 </div>
 
                 <div class="row">
-                        <div class="col-12">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tempore recusandae eligendi quam deserunt corporis ullam impedit nostrum sint rem!               
+                        <div class="col-12" id="fecha">
+                              
                         </div>           
                 </div>
 
@@ -138,10 +140,42 @@
                 </div>
 
                 <div class="row">
-                   <div class="col-12">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloremque ut voluptate. Tempora illo voluptas atque nulla quaerat laudantium aspernatur.       
+                   <div class="col-12" id="hora_ini">         
                     </div>           
-                 </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>Costo</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="costo">      
+                    </div>           
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>TIPO</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="tipo">      
+                    </div>           
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>Fecha Fin</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="fecha_fin">      
+                    </div>           
+                </div>
 
             </div>
 
@@ -150,17 +184,16 @@
             <div class="col-8"  STYLE="BORDER:DOUBLE 10PX LIME">
                     <div class="row">
                         <div class="col-12">
-                            <h5>Lugar</h5>                       
+                            <h5>Mapa</h5>                       
                         </div>           
                     </div>      
                     <div class="row">
-                            <div class="col-12" id="map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.0566541069234!2d-103.47411888453044!3d19.710211986727337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f86b78af7f71d%3A0xdb05871f465a35!2sCalle+Gral.+Vicente+Guerrero+Salda%C3%B1a+356%2C+Jardines+del+Sol%2C+49000+Cd+Guzman%2C+Jal.!5e0!3m2!1ses!2smx!4v1512593707266" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div class="col-12" id="map">                                  
                             </div>           
                     </div>   
                     <div class="row">
                          <div class="col-12">
-                                <h5>Direccion</h5>                       
+                                <h5 id="direccion"> Direccion</h5>                       
                          </div>           
                     </div>   
             </div>
@@ -172,7 +205,14 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
       <script src="js/funciones.js" charset="utf-8"></script>
-    
+      <script src="js/detalle_evento.js" charset="utf-8"></script>
+      <script>
+$(document).ready( function() {
+  carga_detalle("<?php echo $_GET['id']; ?>","eventos","GET");
+
+});
+    </script>
+
     </body>
 </html>
       

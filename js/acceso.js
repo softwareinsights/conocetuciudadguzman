@@ -1,7 +1,7 @@
 function enviarAcceso(acceso){
 console.log(acceso);
   $.ajax({
-      url: "http://localhost:3000/api/usuarios/login",
+      url: "http://conocetucdgapi.herokuapp.com/api/usuarios/login",
       type: "POST",
       crossDomain: true,
       dataType: "JSON",

@@ -3,7 +3,7 @@ function carga_lugar(metodo,clave,valor,container,tipo){
     console.log(metodo,clave,valor,container,tipo);
     
       $.ajax({
-           url: "http://localhost:3000/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&", 
+           url: "http://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&", 
            
         
            type: tipo,
