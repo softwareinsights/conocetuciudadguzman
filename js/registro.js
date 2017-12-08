@@ -18,5 +18,4 @@ console.log(registro);
           alert(error.responseJSON.error.message);
       }
     });
-
 }

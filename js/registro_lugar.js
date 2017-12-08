@@ -1,3 +1,4 @@
+
 function registrolugar(lugar){
 console.log(lugar);
   $.ajax({
@@ -18,5 +19,6 @@ console.log(lugar);
           alert(error.responseJSON.error.message);
       }
     });
+
 
 }
