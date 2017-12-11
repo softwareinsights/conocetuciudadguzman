@@ -1,7 +1,7 @@
 function registroevento(evento){
 console.log(evento);
   $.ajax({
-      url: "http://localhost:3000/api/eventos",
+      url: "http://conocetucdgapi.herokuapp.com/api/eventos",
       type: "POST",
       crossDomain: true,
       dataType: "JSON",

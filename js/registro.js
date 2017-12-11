@@ -1,7 +1,7 @@
 function enviarRegistro(registro){
 console.log(registro);
   $.ajax({
-      url: "http://localhost:3000/api/usuarios",
+      url: "http://conocetucdgapi.herokuapp.com/api/usuarios",
       type: "POST",
       crossDomain: true,
       dataType: "JSON",
