@@ -1,6 +1,6 @@
 
 function carga_card(metodo,clave,valor,container,tipo){
-
+console.log(metodo, clave, valor);
   $.ajax({
        url: "https://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&",
        type: tipo,
@@ -29,6 +29,7 @@ function carga_card(metodo,clave,valor,container,tipo){
                                '<br>';
                   var contenedor = $("#" + container);
                   contenedor.append(html);
+                  
 
             }
            }

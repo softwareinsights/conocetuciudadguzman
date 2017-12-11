@@ -1,7 +1,7 @@
 function registrolugar(lugar){
 console.log(lugar);
   $.ajax({
-      url: "http://localhost:3000/api/lugares",
+      url: "http://conocetucdgapi.herokuapp.com/api/lugares",
       type: "POST",
       crossDomain: true,
       dataType: "JSON",

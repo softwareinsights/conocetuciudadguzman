@@ -1,9 +1,3 @@
-
-<?php
-
-echo $_GET['id'];
- ?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -79,34 +73,122 @@ echo $_GET['id'];
             </div>
             </div>
         </div>
-        </section>
+</section>
 
+    <div class="row"  STYLE="BORDER:DOUBLE 10PX LIME">
+        <div class="col-12">
+            <h1>Detalles de Evento </h1>
+        </div>
+    </div>
         <div class="row">
             <div class="col-md-7 col-md-5">
             <div class="row">
                 <div class="col-12">
-                <section class="detalle evento">
-                    <h2>Lugar</h2>
-                    <img class="img-fluid" src="db4.jpg" alt="foto" >
-                </div>
-                </section>
+                    <h2>Lugar</h2>                   
+                </div>           
             </div>
-            </div>
+            <div class="row" >
+                    <div class="col-12" id="img">
+                        <img class="img-fluid" src="db4.jpg" alt="foto">               
+                    </div>           
+             </div>           
         </div>
 
-        <div class="row">
-            <div class="col-md-4 col-md-8">
+<!--reglon 1 columna 2-->
+        <div class="col-7"  STYLE="BORDER:DOUBLE 10PX LIME">
+                <div class="row" >
+                    <div class="col-12">
+                        <h2 id="nombre"> Nombre</h2>  
+                        </div>           
+                </div>
+
+                <div class="row">
+                        <div class="col-12">
+                            <h2 id="descripcion">Descripcion</h2>    
+                        </div>           
+                </div>           
+        </div>
+        
+    </div>
+
+<!--reglon 2-->
+    <div class="row">
+            <div class="col-4" STYLE="BORDER:DOUBLE 10PX LIME">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Fecha</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                        <div class="col-12" id="fecha">
+                              
+                        </div>           
+                </div>
 
                 <div class="row">
                     <div class="col-12">
-                    <section class="detalle evento">
-                        <h2>Fecha</h2>
-                    <div class="form-gruop">
-                            <input type="text" name="fecha" placeholder="Fecha" class="form-control" id="fecha"> <br>  </div>
-                    </div>
-                    </section>
+                      <h5>Hora</h5>                   
+                    </div>           
                 </div>
 
+                <div class="row">
+                   <div class="col-12" id="hora_ini">         
+                    </div>           
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>Costo</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="costo">      
+                    </div>           
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>TIPO</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="tipo">      
+                    </div>           
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                      <h5>Fecha Fin</h5>                   
+                    </div>           
+                </div>
+
+                <div class="row">
+                   <div class="col-12" id="fecha_fin">      
+                    </div>           
+                </div>
+
+            </div>
+
+        <!--reglon 2 columna 2--> 
+
+            <div class="col-8"  STYLE="BORDER:DOUBLE 10PX LIME">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>Mapa</h5>                       
+                        </div>           
+                    </div>      
+                    <div class="row">
+                            <div class="col-12" id="map">                                  
+                            </div>           
+                    </div>   
+                    <div class="row">
+                         <div class="col-12">
+                                <h5 id="direccion"> Direccion</h5>                       
+                         </div>           
+                    </div>   
             </div>
         </div>
 
@@ -114,7 +196,14 @@ echo $_GET['id'];
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
       <script src="js/funciones.js" charset="utf-8"></script>
-    
+      <script src="js/detalle_evento.js" charset="utf-8"></script>
+      <script>
+        $(document).ready( function() {
+        carga_detalle("<?php echo $_GET['id']; ?>","eventos","GET");
+
+        });
+    </script>
+
     </body>
 </html>
       
