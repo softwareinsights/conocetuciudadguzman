@@ -1,3 +1,5 @@
 [1122/120031.210:ERROR:process_info.cc(632)] range at 0x6f8d2de400000000, size 0x2c2 fully unreadable
 [1122/122620.109:ERROR:process_info.cc(632)] range at 0x6f8d2e0400000000, size 0x2c2 fully unreadable
 [1122/122620.109:ERROR:process_info.cc(632)] range at 0x0, size 0x2c2 fully unreadable
+[1208/115419:ERROR:tcp_listen_socket.cc(76)] Could not bind socket to 127.0.0.1:6004
+[1208/115419:ERROR:node_debugger.cc(86)] Cannot start debugger server
