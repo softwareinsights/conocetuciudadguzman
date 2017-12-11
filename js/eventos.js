@@ -2,7 +2,7 @@
 function carga_card(metodo,clave,valor,container,tipo){
 console.log(metodo, clave, valor);
   $.ajax({
-       url: "http://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&",
+       url: "https://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&",
        type: tipo,
        crossDomain: true,
        dataType: "JSON",
@@ -20,7 +20,7 @@ console.log(metodo, clave, valor);
                                            '<div class="card-body">' +
                                                '<h4 class="card-title">' + evento.nombre + '</h4>' +
                                                '<p class="card-text">' + evento.descripcion + '</p>' +
-                                               '<a href="detalle_evento.php?id='+evento.id+'" class="btn btn-primary">Ver más</a>' +
+                                               '<a href="detalle_evento.php?id=' + evento.id + '" class="btn btn-primary">Ver más</a>' +
                                            '</div>' +
                                        '</div>' +
                                        '</article>' +
