@@ -4,4 +4,5 @@
     RewriteCond %{SCRIPT_FILENAME} !-d
     RewriteCond %{SCRIPT_FILENAME} !-f 
     RewriteRule ^([^/]+)$ index.php?view=$1
+    RewriteRule ^detalle_evento/([^/]+)$ index.php?view=detalle_evento&id=$1
 </IfModule>

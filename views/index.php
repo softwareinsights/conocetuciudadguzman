@@ -43,7 +43,9 @@
               </section>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-12" >
+      </div>
+      
+      <div class="col-lg-4 col-sm-12" >
             <section class="Eventos">
                 <h1 class="text-center">Eventos</h1>
                 <h2 class="text-center text-success">Ciudad</h2>

@@ -20,7 +20,7 @@ console.log(metodo, clave, valor);
                                            '<div class="card-body">' +
                                                '<h4 class="card-title">' + evento.nombre + '</h4>' +
                                                '<p class="card-text">' + evento.descripcion + '</p>' +
-                                               '<a href="detalle_evento.php?id=' + evento.id + '" class="btn btn-primary">Ver más</a>' +
+                                               '<a href="detalle_evento/' + evento.id + '" class="btn btn-primary">Ver más</a>' +
                                            '</div>' +
                                        '</div>' +
                                        '</article>' +

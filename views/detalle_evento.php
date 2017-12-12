@@ -118,9 +118,4 @@
             </div>
         </div>
 
-      <script>
-            $(document).ready( function() {
-            carga_detalle("<?php echo $_GET['id']; ?>","eventos","GET");
 
-            });
-     </script>
