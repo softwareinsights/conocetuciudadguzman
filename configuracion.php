@@ -1,3 +1,3 @@
 <?php
-define("PATH","http://localhost/conocetucdg/");
+define("PATH","http://localhost/conocetuciudadguzman/");
 ?>

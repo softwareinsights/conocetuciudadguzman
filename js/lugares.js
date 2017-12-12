@@ -1,10 +1,10 @@
 
-function carga_lugar(metodo,clave,valor,container,tipo){
-    console.log(metodo,clave,valor,container,tipo);
+function carga_lugar(metodo, tipo,container, order,limite){
+    
     
       $.ajax({
-           url: "http://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22where%22%3A%7B%22"+clave+"%22%3A%22"+valor+"%22%7D%7D&", 
-           
+ 
+           url:"http://conocetucdgapi.herokuapp.com/api/"+metodo+"?filter=%7B%22order%22%3A%22"+order+"%20DESC%22%2C%22limit%22%3A"+limite+"%7D",
         
            type: tipo,
            crossDomain: true,
@@ -14,11 +14,11 @@ function carga_lugar(metodo,clave,valor,container,tipo){
                    $.each(data,pintarCard);
                    function pintarCard(index){
                       var lugar = data[index];
-                      var html =  '<div class="row">' +
-                                       '<div class="col-12">' +
+                      var html = 
+                                       '<div class="col-6">' +
                                            '<article>' +
                                                '<div class="card" style="width: 20rem;">' +
-                                               '<img class="card-img-top" src="' + lugar.foto + '" alt="Card image cap">' +
+                                               '<img class="card-img-top" src="' + lugar.foto + '" alt="Card image cap" class="img-fluid">' +
                                                '<div class="card-body">' +
                                                    '<h4 class="card-title">' + lugar.nombre + '</h4>' +
                                                    '<p class="card-text">' + lugar.descripcion + '</p>' +
@@ -26,9 +26,8 @@ function carga_lugar(metodo,clave,valor,container,tipo){
                                                '</div>' +
                                            '</div>' +
                                            '</article>' +
-                                       '</div>' +
-                                   '</div>'+
-                                   '<br>';
+                                       '</div>';
+                                  
                       var contenedor = $("#" + container);
                       contenedor.append(html);
     
