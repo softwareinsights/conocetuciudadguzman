@@ -102,7 +102,12 @@
         $(document).ready( function() {
           carga_card("eventos","tipo","CIUDAD","evento_ciudad","GET");
           carga_card("eventos","tipo","COMUNIDAD","evento_comunidad","GET");
-          carga_lugar("lugares","lugar_votados","GET");
+          carga_lugar("lugares","GET","lugar_votados","voto","2");   
+          carga_lugar("lugares","GET","lugar_recomendados","recomendado","2");
+
+    
+
+
         });
       </script>
       <?php
