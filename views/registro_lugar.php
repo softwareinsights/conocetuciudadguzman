@@ -13,6 +13,10 @@
                 <label class="form-label" for="nombre"><strong>Nombre: </label>
                 <input type="text" name="nombre" placeholder="Nombre" class="form-control" id="nombre" required><br>
               </div>
+            <div class="form-gruop">
+              <label class="form-label" for="foto"><strong>FOTO: </label>
+              <input type="text" name="foto" placeholder="URL de la FOTO" class="form-control" id="foto" required><br>
+            </div>
               <div class="form-gruop">
                 <label class="form-label" for="lat"><strong>Latitud:</label>
                 <input type="text" name="lat" placeholder="Latitud" class="form-control" id="lat" required> <br>
@@ -62,6 +66,7 @@
 
           var lugar = {
             "nombre": ''+ $("#nombre").val() +'',
+            "foto": ''+ $("#foto").val() +'',
             "lat": ''+ $("#lat").val() +'',
             "lng": ''+ $("#lng").val() +'',
             "direccion": ''+ $("#direccion").val() +'',
@@ -106,3 +111,4 @@
 
       });
   </script>
+      

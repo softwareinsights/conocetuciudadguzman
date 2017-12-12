@@ -8,8 +8,7 @@
               <section class="Lugares">
                 <h1>Lugares</h1>
                 <h2 class="text-center text-danger">Mejor Votados</h2>
-                <div class="row">
-                  <div class="col-lg-6 col-sm-12" id="lugar_votados"></div>                
+                <div class="row" id="lugar_votados">               
                 </div>
 
                 

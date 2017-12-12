@@ -18,18 +18,12 @@
         <div class="row">
             <div class="col-12">
                 <ul>
-                    <li>
+                    
                         <a href="http://www.facebook.com"><i class="fa fa-facebook-square fa-2x">&nbsp;&nbsp;</i></a>
-                    </li>
-                    <li>
-                        <a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x">&nbsp;&nbsp;</i></a>
-                    </li>
-                    <li>
+                         <a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x">&nbsp;&nbsp;</i></a>
                         <a href="http://www.instagram.com"><i class="fa fa-instagram fa-2x">&nbsp;&nbsp;</i></a>
-                    </li>
-                    <li>
                         <a href="http://www.youtube.com"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i></a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
