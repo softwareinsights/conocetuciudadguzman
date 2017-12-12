@@ -8,38 +8,10 @@
               <section class="Lugares">
                 <h1>Lugares</h1>
                 <h2 class="text-center text-danger">Mejor Votados</h2>
-                <div class="row">
-                  <div class="col-lg-6 col-sm-12" id="lugar_votados"></div>                
-                </div>
+                <div class="row"  id="lugar_votados"></div>
 
-                
                 <h2 class="text-center text-danger">Mas Visitados</h2>
-                <div class="row">
-                  <div class="col-lg-6 col-sm-12">
-                    <article>
-                      <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="db8.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <h4 class="card-title">Krillin</h4>
-                          <p class="card-text">Personaje que participo en la serie de Dragon Ball..</p>
-                          <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-lg-6 col-sm-12">
-                    <article>
-                      <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="db9.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                          <h4 class="card-title">Mr. Satan</h4>
-                          <p class="card-text">Personaje que participo en la serie de Dragon Ball..</p>
-                          <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
+                <div class="row" id="lugar_recomendados"></div>
               </section>
           </div>
         </div>
