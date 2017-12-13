@@ -1,4 +1,12 @@
 <?php 
+    # ACTIVA SESIONES
+    session_start();
+
+    # CERRA SESIÓN
+    if(isset($_GET['cerrar_sesion'])){
+      session_destroy();
+    }
+
     include "configuracion.php";
 ?>
 <?php 
@@ -168,11 +176,37 @@
   
       case "form_login": 
         ?>
+      <script src="<?php echo PATH;?>vendor/js/jquery-3.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script src="<?php echo PATH;?>js/funciones.js"></script>
+      <script src="http://maps.google.com/maps/api/js?key=AIzaSyBLwHlcCWRfGPmCS5ti87ntjH5rolWZZM4&libraries=visualization"></script>
+      <script src="<?php echo PATH;?>js/acceso.js"></script>
+      <script src="<?php echo PATH;?>js/icmap.js"></script>
+        <script>  $(document).ready(function(){
+          $("#submit").click(enviar);
+
+            function enviar(e) {
+              e.preventDefault();
+
+              var acceso = {
+                            "email": ''+ $("#email").val() +'',
+                            "password": ''+ $("#password").val() +'',
+                            "tipo": "CIUDADANO"
+                          }
+                          console.log(acceso);
+              enviarAcceso(acceso);
+            }
+
+          });
+
+        </script>
+
         
       <?php
       break;
 
-      case "form_registro": 
+      case "form_registro":  
         ?>
         
       <?php

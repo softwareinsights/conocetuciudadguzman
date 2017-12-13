@@ -25,21 +25,4 @@
         </footer>
   </div>
 
-<script>  $(document).ready(function(){
-   $("#submit").click(enviar);
 
-    function enviar(e) {
-      e.preventDefault();
-
-      var acceso = {
-                      "email": ''+ $("#email").val() +'',
-                      "password": ''+ $("#password").val() +'',
-                      "tipo": "CIUDADANO"
-                    }
-                    console.log(acceso);
-      enviarAcceso(acceso);
-    }
-
-  });
-
-</script>

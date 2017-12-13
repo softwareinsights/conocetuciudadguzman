@@ -8,8 +8,7 @@ console.log(acceso);
       data: acceso,
       success : function(response, status){
         if(status === "success") {
-            alert("Acceso autorizado");
-            window.location.href="index.html";
+            window.location.href="server/acceso.php?token="+response.id;
         } else {
             alert("Un error ha ocurrido");
         }
