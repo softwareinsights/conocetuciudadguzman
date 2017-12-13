@@ -17,7 +17,7 @@ function carga_lugar(metodo, tipo, container, order, limite){
                                                '<div class="card-body">' +
                                                    '<h4 class="card-title">' + lugar.nombre + '</h4>' +
                                                    '<p class="card-text">' + lugar.descripcion + '</p>' +
-                                                   '<a href="#" class="btn btn-primary">Ver más</a>'+ 
+                                                   '<a href="detalle_lugar/' + lugar.id + '" class="btn btn-primary">Ver más</a>'+ 
                                                    '<button class="btn btn-secondary btn_like" data-like="'+lugar.voto+'" data-id="'+lugar.id+'"> Like ' + ((lugar.voto!==undefined) ? lugar.voto : 0) + '<i class="fa fa-thumbs-o-up"></i></button>'+
                                                '</div>' +
                                            '</div>' +
@@ -56,7 +56,7 @@ function carga_lugar(metodo, tipo, container, order, limite){
                         cache: false,
                         success: function (data, status) {
                             if (status=="success") {
-                                button.text(' Like ' + likes_value);
+                                button.text('Like ' + likes_value);
                                 alert("Tu like fue añadido");
                             }
                         },

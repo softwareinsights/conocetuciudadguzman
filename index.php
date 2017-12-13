@@ -41,6 +41,32 @@
     ?>
 </div>   
 
+    <?php
+
+    switch($view) {
+  
+      case "detalle_lugar": 
+      ?>
+      
+  <script src="<?php echo PATH;?>vendor/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="<?php echo PATH;?>js/funciones.js"></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBLwHlcCWRfGPmCS5ti87ntjH5rolWZZM4&libraries=visualization"></script>
+  <script src="<?php echo PATH;?>js/icmap.js"></script>
+  <script src="<?php echo PATH;?>js/detalle_lugar.js"></script>
+      <script>
+        $(document).ready( function() {
+              carga_detallelugar("<?php echo $_GET['id']; ?>","lugares","GET");
+        });
+      </script>
+ 
+
+      <?php
+      break;
+      case "detalle_evento": 
+      ?>
+      
   <script src="<?php echo PATH;?>vendor/js/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
@@ -49,12 +75,6 @@
   <script src="<?php echo PATH;?>js/icmap.js"></script>
 
 
-    <?php
-
-    switch($view) {
-  
-      case "detalle_evento": 
-      ?>
       <script src="<?php echo PATH;?>js/detalle_evento.js"></script>
       <script>
         $(document).ready( function() {
@@ -66,6 +86,82 @@
   
       case "registro_evento": 
       ?>
+      
+      <script src="<?php echo PATH;?>vendor/js/jquery-ui.min.js"></script>
+      <script src="<?php echo PATH;?>js/icmap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="<?php echo PATH;?>js/funciones.js"></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBLwHlcCWRfGPmCS5ti87ntjH5rolWZZM4&libraries=visualization"></script>
+ 
+
+
+  <script src="<?php echo PATH;?>js/registro_evento.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+
+
+   $("#submit").click(enviar);
+
+
+    function enviar(e) {
+      e.preventDefault();
+
+      var evento = {
+                      "nombre": ''+ $("#nombre").val() +'',
+                      "foto": ''+ $("#foto").val() +'',
+                      "lat": ''+ $("#lat").val() +'',
+                      "lng": ''+ $("#lng").val() +'',
+                      "direccion": ''+ $("#direccion").val() +'',
+                      "descripcion": ''+ $("#descripcion").val() +'',
+                      "fecha": ''+ $("#fecha").val() +'',
+                      "hora_ini": ''+ $("#hora").val() +'',
+                      "fecha_fin": ''+ $("#fecha_fin").val() +'',
+                      "costo": ''+ $("#costo").val() +'',
+                      "tipo": ''+ $("#tipo").val() +'',
+                      "status": ''+ $("#status").val() +''
+                    }
+                    console.log(evento);
+      registroevento(evento);
+    }
+    /*
+      * Maps
+      */
+    var addresspickerMap = $('#direccion').addresspicker({
+        regionBias: "mx",
+        updateCallback: showCallback,
+        mapOptions: {
+            zoom: 16,
+            center: new google.maps.LatLng('20.7217961, -103.38968779999999'),
+            scrollwheel: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            streetViewControl: false
+        },
+        elements: {
+            map: "#map_canvas",
+            lat: "#lat",
+            lng: "#lng"
+        }
+    });
+
+    var gmarker = addresspickerMap.addresspicker("marker");
+    gmarker.setVisible(true);
+    addresspickerMap.addresspicker("updatePosition");
+    var map = addresspickerMap.addresspicker("map");
+    google.maps.event.trigger(map,"resize");
+
+    $('#reverseGeocode').change(function(){
+        $("#direccion").addresspicker("option", "reverseGeocode", ($(this).val() === 'true'));
+    });
+
+    function showCallback(geocodeResult, parsedGeocodeResult){
+        // $('#callback_result').text(JSON.stringify(parsedGeocodeResult, null, 4));
+    }
+
+  });
+  </script>
+
       
       <?php
       break;
@@ -84,6 +180,15 @@
 
       case "registro_lugar": 
       ?>
+      
+  <script src="<?php echo PATH;?>vendor/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="<?php echo PATH;?>js/funciones.js"></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBLwHlcCWRfGPmCS5ti87ntjH5rolWZZM4&libraries=visualization"></script>
+  <script src="<?php echo PATH;?>js/icmap.js"></script>
+
+
       <script src="<?php echo PATH;?>js/registro_lugar.js"></script>
       <?php
       break;
@@ -96,6 +201,15 @@
   
       default: 
       ?>
+      
+  <script src="<?php echo PATH;?>vendor/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="<?php echo PATH;?>js/funciones.js"></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBLwHlcCWRfGPmCS5ti87ntjH5rolWZZM4&libraries=visualization"></script>
+  
+
+
       <script src="<?php echo PATH;?>js/eventos.js"></script>
       <script src="<?php echo PATH;?>js/lugares.js"></script>
       <script>
