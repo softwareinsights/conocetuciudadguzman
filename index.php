@@ -236,9 +236,6 @@
         carga_lugar("lugares","GET","lugar_votados","voto","2");   
         carga_lugar("lugares","GET","lugar_recomendados","recomendado","2");
 
-
-
-
       });
     </script>
 

@@ -1,4 +1,9 @@
-
+<?php 
+    if(!isset($_SESSION['token'])){ 
+      echo "Acceso Denegado";
+      exit;
+    }
+?>
   
   <div class="row">
     <div class="col-md-6 offset-3">
