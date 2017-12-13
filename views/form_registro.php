@@ -38,33 +38,3 @@
   </div>
 
 
-  <script>
-  $(document).ready(function(){
-
-
-   $("#submit").click(enviar);
-
-
-    function enviar(e) {
-      e.preventDefault();
-
-      if($("#password").val() !== $("#repassword").val() ){
-        alert("No coinciden las contraseñas");
-        return  false;
-      }
-
-      var registro = {
-                      "realm": ''+ $("#realm").val() +'',
-                      "telefono": ''+ $("#telefono").val() +'',
-                      "email": ''+ $("#email").val() +'',
-                      "password": ''+ $("#password").val() +'',
-                      "tipo": "CIUDADANO"
-                    }
-                    console.log(registro);
-      enviarRegistro(registro);
-    }
-
-  });
-  </script>
-
-

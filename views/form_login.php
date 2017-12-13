@@ -19,10 +19,6 @@
         </div>
       </div>
     </div>
-
-        <footer>
-    datos x
-        </footer>
   </div>
 
 
