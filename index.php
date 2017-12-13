@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="vendor\css\bootstrap.min.css">-->
     <link rel="stylesheet" href="<?php echo PATH;?>vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo PATH;?>css/estilo.css">
+    <link rel="stylesheet" href="">
     <!-- jQuery primero, despu�s Bootstrap JS.
     <script src="vendor\js\bootstrap.min.js" ></script>-->
   </head>
