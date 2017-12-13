@@ -8,7 +8,7 @@ console.log(acceso);
       data: acceso,
       success : function(response, status){
         if(status === "success") {
-            alert("Acceso autorizado");
+            alert("Has ingresado a tu perfil");
             window.location.href="index.html";
         } else {
             alert("Un error ha ocurrido");
